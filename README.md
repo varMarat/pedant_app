@@ -1,4 +1,4 @@
-# productcards
+# pedant_app
 
 # Тестовое задание Pedant.ru
 
