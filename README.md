@@ -2,6 +2,8 @@
 
 # Тестовое задание Pedant.ru
 
+# тест git
+
 ## Project setup
 
 ```
