@@ -1,19 +1,18 @@
 <template>
   <div class="device" @click="addToCart">
-    <div class="device__main-img-wrapper">
-      <img :src="product.images[0].path" class="device__main-img" alt="" />
-    </div>
-    <div class="device__cost-our-discount">
-      <div class="device__cost-our-discount__text">-30%</div>
-    </div>
+    <img class="divice__img" :src="product.images[0].path" alt="" />
+    <div class="device__cost-our-discount">-30%</div>
     <div class="device__title">{{ product.name }}</div>
     <div class="device__reviews">
       <div class="device__stars">
-        <font-awesome-icon :icon="['fas', 'star']" />
-        <font-awesome-icon :icon="['fas', 'star']" />
-        <font-awesome-icon :icon="['fas', 'star']" />
-        <font-awesome-icon :icon="['fas', 'star']" />
-        <font-awesome-icon :icon="['fas', 'star']" />
+        <font-awesome-icon class="device__stars-icon" :icon="['fas', 'star']" />
+        <font-awesome-icon class="device__stars-icon" :icon="['fas', 'star']" />
+        <font-awesome-icon class="device__stars-icon" :icon="['fas', 'star']" />
+        <font-awesome-icon class="device__stars-icon" :icon="['fas', 'star']" />
+        <font-awesome-icon
+          class="device__stars-icon"
+          :icon="['fas', 'star-half']"
+        />
       </div>
       <div class="device__reviews-count">
         <div class="device__reviews-count-text">
@@ -26,19 +25,19 @@
       <div class="device__cost-others-wrapper">
         <div class="device__cost-others-title">Цена у других</div>
         <div class="device__cost-others-cost">
-          {{ product.other_seller_price }}
+          {{ product.other_seller_price }} руб
         </div>
       </div>
       <div class="device__cost-our-wrapper">
         <div class="device__cost-our-title">Цена у нас</div>
-        <div class="device__cost-our-cost">от {{ product.price }}</div>
+        <div class="device__cost-our-cost">от {{ product.price }} руб</div>
       </div>
     </div>
     <div class="line"></div>
     <div class="device__sales-wrapper">
       <div class="device__sales-count">Продано всего: {{ totalSold }}</div>
       <div class="device__sales-last">
-        <div class="device__sales-last-img">
+        <div class="device__sales-last-icon">
           <img src="@/assets/calendar.svg" alt="" />
         </div>
         <div class="device__sales-last-desc">
@@ -82,19 +81,18 @@ export default {
   height: 350px;
   background: #ffffff;
   border: 1px solid #f3f3f3;
-  box-sizing: border-box;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 100px;
   position: relative;
   cursor: pointer;
 }
-.device__main-img-wrapper {
-  width: 126px;
-  height: 128px;
-  margin: 15px auto;
-}
-.device__main-img {
-  max-width: 100%;
+.divice__img {
+  display: block;
+  max-height: 128px;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 .device__cost-our-discount {
   position: absolute;
@@ -107,71 +105,58 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.device__cost-our-discount__text {
-  width: 32px;
-  height: 17px;
+  line-height: 17px;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
   color: #ffffff;
 }
 .device__title {
-  width: 247px;
-  height: 13px;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
-  margin-left: 21px;
+  color: #242424;
+  margin-top: 12px;
+  margin-left: 20px;
 }
-.device__reviews {
-  display: flex;
-  align-items: center;
-  margin-top: 50px;
-  height: 17px;
-  margin-left: 21px;
-}
-.device__stars {
-  width: 68px;
-  font-family: Font Awesome 5 Free;
+.device__stars-icon {
+  color: #ffcf55;
   font-style: normal;
   font-weight: 900;
   font-size: 12px;
   line-height: 14px;
-  color: #ffcf55;
-  display: flex;
-  align-items: center;
 }
-.device__reviews-count {
+.device__reviews {
   display: flex;
   align-items: center;
+  margin-top: 37px;
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+.device__stars {
 }
 .device__reviews-count-text {
-  width: 15px;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
   line-height: 12px;
+  color: #000000;
 }
 .line {
   border-bottom: 1px solid #efefef;
-  margin-top: 12px;
+  margin-left: 7px;
 }
-
 .device__cost-wrapper {
   margin-top: 11px;
-  margin-left: 21px;
+  margin-left: 20px;
+  margin-right: 12px;
+  margin-bottom: 27px;
   display: flex;
   justify-content: space-between;
 }
-
 .device__cost-others-wrapper {
 }
 .device__cost-others-title {
-  width: 78px;
-  height: 15px;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -179,20 +164,15 @@ export default {
   color: #000000;
 }
 .device__cost-others-cost {
-  width: 82px;
-  height: 18px;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   color: #6b6b6b;
 }
-
 .device__cost-our-wrapper {
 }
 .device__cost-our-title {
-  width: 60px;
-  height: 15px;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -200,8 +180,6 @@ export default {
   color: #000000;
 }
 .device__cost-our-cost {
-  width: 124px;
-  height: 31px;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -209,15 +187,17 @@ export default {
   text-decoration-line: underline;
   color: #242424;
 }
-
 .device__sales-wrapper {
-  margin: 4px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 9px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 .device__sales-count {
-  height: 12px;
+  font-style: normal;
+  font-weight: 300;
   font-size: 10px;
   line-height: 12px;
   text-align: center;
@@ -227,11 +207,10 @@ export default {
   display: flex;
   align-items: center;
 }
-.device__sales-last-img {
-  margin-right: 5px;
+.device__sales-last-icon {
+  margin-right: 7px;
 }
 .device__sales-last-desc {
-  height: 12px;
   font-style: normal;
   font-weight: 300;
   font-size: 10px;

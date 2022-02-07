@@ -41,7 +41,9 @@ export default {
 .cart-product-card__img {
 }
 .cart-product-card__img img {
-  max-width: 150px;
+  display: block;
+  max-height: 128px;
+  margin: 0 auto;
 }
 .cart-product-card__info {
   flex-grow: 1;

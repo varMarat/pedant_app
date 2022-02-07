@@ -34,12 +34,10 @@ export default {
 <style>
 .catalog {
   width: 1440px;
-  height: 761px;
   margin: 0 auto;
 }
 .device-wrapper {
   width: 1226px;
-  height: 734px;
   background: #ffffff;
   margin: 0 auto;
   display: flex;
